@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name         洛谷 - 自动展开提示
-// @namespace    http://tampermonkey.net/
 // @version      1
 // @description  自动展开提示
 // @author       Henry-ZHR
