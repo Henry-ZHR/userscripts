@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         洛谷 - 自动展开提示
 // @namespace    http://tampermonkey.net/
-// @version      0
+// @version      1
 // @description  自动展开提示
 // @author       Henry-ZHR
-// @match        https://www.luogu.com.cn/problem/*
+// @include      https://www.luogu.com.cn/problem/*
+// @exclude      https://www.luogu.com.cn/problem/list
 // @grant        none
 // @require      https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js
 // ==/UserScript==
