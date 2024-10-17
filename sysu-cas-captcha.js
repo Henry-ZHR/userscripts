@@ -51,7 +51,7 @@ There is also a best version: "tesseract-best.min.js".
 // "use strict";
 
 
-const captcha_regex = /^[A-Za-z0-9]{4}$/g;
+const captcha_rm_regex = /[^A-Za-z0-9]/g;
 const black_threshold = 50;
 
 
@@ -116,7 +116,7 @@ async function recognize() {
   let img = document.getElementById('captchaImg');
   await img.decode();
   let { data: { text } } = await worker.recognize(clone_image(img));
-  return text.trim();
+  return text.replace(captcha_rm_regex, "");
 }
 
 async function solve() {
@@ -126,7 +126,7 @@ async function solve() {
     let result = await recognize();
     react_input(document.getElementById("captcha"), result);
 
-    if (!result.match(captcha_regex)) {
+    if (result.length !== 4) {
       if (window.confirm("Captcha seems incorrect:" + result + "\nReload?")) {
         location.reload();
       }
